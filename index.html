@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Comparison Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Compare Clothing Colors</h1>
+    
+    <div class="comparison-container">
+        <!-- First clothing upload or URL -->
+        <div class="upload-container">
+            <label for="image1">Upload or Paste URL for Clothing 1:</label>
+            <input type="file" id="image1" accept="image/*">
+            <input type="url" id="url1" placeholder="Or paste image URL here">
+            <div id="color-bar1" class="color-bar"></div>
+            <div id="result1" class="result"></div>
+        </div>
+        
+        <!-- Second clothing upload or URL -->
+        <div class="upload-container">
+            <label for="image2">Upload or Paste URL for Clothing 2:</label>
+            <input type="file" id="image2" accept="image/*">
+            <input type="url" id="url2" placeholder="Or paste image URL here">
+            <div id="color-bar2" class="color-bar"></div>
+            <div id="result2" class="result"></div>
+        </div>
+    </div>
+
+    <button class="compare-btn" onclick="compareColors()">Compare Colors</button>
+
+    <!-- Delta E result -->
+    <div id="deltaE-container">
+        <div id="deltaE-result">ΔE: --</div>
+        <div id="delta-bar" style="width: 0%;"></div>
+        <div id="delta-description">Difference noticeability will appear here.</div>
+    </div>
+
+    <!-- Include Color Thief library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
